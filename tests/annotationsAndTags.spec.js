@@ -4,9 +4,9 @@ test.skip("Skip this test", async ({ page }) => {
   await page.goto("https://www.saucedemo.com/");
 });
 
-test.only("Run this test only", async ({ page }) => {
-  await page.goto("https://www.google.com/");
-});
+// test.only("Run this test only", async ({ page }) => {
+//   await page.goto("https://www.google.com/");
+// });
 
 test("not yet ready", async ({ page }) => {
   test.fail();
@@ -20,4 +20,10 @@ test("slow test", async ({ page }) => {
 
 test("Skip this test on condition", async ({ page, browserName }) => {
   test.skip(browserName === "chromium", "Still working on it");
+});
+
+//Tags
+
+test("Test full report @smoke", async ({ page }) => {
+  await page.goto("https://www.saucedemo.com/");
 });
